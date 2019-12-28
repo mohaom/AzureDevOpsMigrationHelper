@@ -86,6 +86,10 @@ namespace DevOps_Migration_Helper
             fileConform.Writeline("Project,ProcessPath");
             foreach (var item in projects)
             {
+                if (item == "Logs")
+                {
+                    continue;
+                }
                 fileConform.Writeline($"{item},{lblFolder.Text}\\{item}");
             }
             fileConform.Flush();
