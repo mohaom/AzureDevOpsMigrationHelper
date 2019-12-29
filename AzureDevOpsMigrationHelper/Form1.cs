@@ -740,21 +740,7 @@ namespace DevOps_Migration_Helper
             {
                 GetErroredProject();
             }
-            //string Projects;
-            //OpenFileDialog dia = new OpenFileDialog();
-            //if (dia.ShowDialog() == DialogResult.OK)
-            //{
-            //    Projects = dia.FileName;
-            //    StreamReader sr = new StreamReader(Projects);
-            //    sr.ReadLine();
-            //    string project;
-            //    string process;
-            //    while (!sr.EndOfStream)
-            //    {
-            //        var line = sr.ReadLine();
-            //        project = line.Split(',')[0];
-            //        process = line.Split(',')[1];
-            //        Console.WriteLine($"Importing project {project}.....");
+
             Console.WriteLine("Now Will launch Powershell to Import all changes to Azure DevOps Server! Please dont close the powershell Windows !");
             ExecuteErrorConform("", txtCollectionUrl.Text, "");
         }
@@ -767,11 +753,7 @@ namespace DevOps_Migration_Helper
         private void BtnFixTF402577_Click(object sender, EventArgs e)
         {
             StreamWriter log = new StreamWriter("logTF402577.txt");
-            //OpenFileDialog logfiled = new OpenFileDialog();
-            //string logFile;
-            //if (logfiled.ShowDialog() == DialogResult.OK)
-            //{
-            //    logFile = lblLogFile.Text;
+
             StreamReader sr = new StreamReader(lblLogFile.Text);
             string line;
             List<FieldsErrorTF402577> WIControls = new List<FieldsErrorTF402577>();
@@ -779,7 +761,7 @@ namespace DevOps_Migration_Helper
             string projectname = "";
             while (!sr.EndOfStream)
             {
-                //[Error  @07:13:11.195] Step : ProcessValidation - Failure Type - Validation failed : Invalid process template: WorkItem Tracking\TypeDefinitions\PermissionRequest.xml:165: TF402577: Field Thiqah.Purpose specifies friendly name Purpose which is already in use by  fields Microsoft.VSTS.CMMI.Purpose in process templates CMMI. Friendly names must be unique across all field definitions.
+                
                 line = sr.ReadLine();
                 if (line.Contains("Starting validation of project"))
                 {
