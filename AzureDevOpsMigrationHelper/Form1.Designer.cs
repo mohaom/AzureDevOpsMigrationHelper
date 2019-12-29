@@ -47,6 +47,14 @@
             this.txtCollectionUrl = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnConformProjects = new System.Windows.Forms.Button();
+            this.btnClearConsole = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblLogFile = new System.Windows.Forms.Label();
+            this.btnChange = new System.Windows.Forms.Button();
+            this.btnConformProject = new System.Windows.Forms.Button();
+            this.btnConformErrorProjects = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnFixTF402577 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -70,25 +78,26 @@
             // 
             this.btnOpen.Location = new System.Drawing.Point(703, 51);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(41, 23);
+            this.btnOpen.Size = new System.Drawing.Size(56, 23);
             this.btnOpen.TabIndex = 3;
-            this.btnOpen.Text = "Open";
+            this.btnOpen.Text = "Change";
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
             // 
             // txtFiles
             // 
-            this.txtFiles.Location = new System.Drawing.Point(312, 93);
+            this.txtFiles.Location = new System.Drawing.Point(312, 120);
             this.txtFiles.Multiline = true;
             this.txtFiles.Name = "txtFiles";
             this.txtFiles.Size = new System.Drawing.Size(434, 95);
             this.txtFiles.TabIndex = 4;
+            this.txtFiles.Text = "*";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(265, 93);
+            this.label3.Location = new System.Drawing.Point(265, 120);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 5;
@@ -148,8 +157,8 @@
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.875F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button5.Location = new System.Drawing.Point(13, 174);
-            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button5.Location = new System.Drawing.Point(13, 202);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(174, 23);
             this.button5.TabIndex = 11;
@@ -161,7 +170,7 @@
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button7.Location = new System.Drawing.Point(13, 146);
+            this.button7.Location = new System.Drawing.Point(13, 174);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(174, 23);
             this.button7.TabIndex = 13;
@@ -173,14 +182,14 @@
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(198, 320);
+            this.splitter1.Size = new System.Drawing.Size(198, 352);
             this.splitter1.TabIndex = 0;
             this.splitter1.TabStop = false;
             // 
             // txtCollectionUrl
             // 
             this.txtCollectionUrl.Location = new System.Drawing.Point(312, 21);
-            this.txtCollectionUrl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCollectionUrl.Margin = new System.Windows.Forms.Padding(2);
             this.txtCollectionUrl.Name = "txtCollectionUrl";
             this.txtCollectionUrl.Size = new System.Drawing.Size(434, 20);
             this.txtCollectionUrl.TabIndex = 14;
@@ -200,40 +209,132 @@
             // 
             this.btnConformProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConformProjects.ForeColor = System.Drawing.Color.Maroon;
-            this.btnConformProjects.Location = new System.Drawing.Point(13, 202);
+            this.btnConformProjects.Location = new System.Drawing.Point(12, 259);
             this.btnConformProjects.Name = "btnConformProjects";
             this.btnConformProjects.Size = new System.Drawing.Size(174, 23);
             this.btnConformProjects.TabIndex = 10;
-            this.btnConformProjects.Text = "7- Conform Projects";
+            this.btnConformProjects.Text = "7- Conform ALL Projects";
             this.btnConformProjects.UseVisualStyleBackColor = true;
             this.btnConformProjects.Click += new System.EventHandler(this.btnConformProjects_Click);
+            // 
+            // btnClearConsole
+            // 
+            this.btnClearConsole.Location = new System.Drawing.Point(312, 229);
+            this.btnClearConsole.Name = "btnClearConsole";
+            this.btnClearConsole.Size = new System.Drawing.Size(126, 23);
+            this.btnClearConsole.TabIndex = 15;
+            this.btnClearConsole.Text = "Clear Console";
+            this.btnClearConsole.UseVisualStyleBackColor = true;
+            this.btnClearConsole.Click += new System.EventHandler(this.BtnClearConsole_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(250, 85);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "LogFile:";
+            // 
+            // lblLogFile
+            // 
+            this.lblLogFile.Location = new System.Drawing.Point(309, 85);
+            this.lblLogFile.Name = "lblLogFile";
+            this.lblLogFile.Size = new System.Drawing.Size(389, 13);
+            this.lblLogFile.TabIndex = 2;
+            // 
+            // btnChange
+            // 
+            this.btnChange.Location = new System.Drawing.Point(705, 81);
+            this.btnChange.Name = "btnChange";
+            this.btnChange.Size = new System.Drawing.Size(54, 23);
+            this.btnChange.TabIndex = 16;
+            this.btnChange.Text = "Change";
+            this.btnChange.UseVisualStyleBackColor = true;
+            // 
+            // btnConformProject
+            // 
+            this.btnConformProject.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConformProject.ForeColor = System.Drawing.Color.Maroon;
+            this.btnConformProject.Location = new System.Drawing.Point(13, 286);
+            this.btnConformProject.Name = "btnConformProject";
+            this.btnConformProject.Size = new System.Drawing.Size(174, 23);
+            this.btnConformProject.TabIndex = 10;
+            this.btnConformProject.Text = "Conform Error Project";
+            this.btnConformProject.UseVisualStyleBackColor = true;
+            this.btnConformProject.Click += new System.EventHandler(this.BtnConformProject_Click);
+            // 
+            // btnConformErrorProjects
+            // 
+            this.btnConformErrorProjects.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConformErrorProjects.ForeColor = System.Drawing.Color.Maroon;
+            this.btnConformErrorProjects.Location = new System.Drawing.Point(12, 230);
+            this.btnConformErrorProjects.Name = "btnConformErrorProjects";
+            this.btnConformErrorProjects.Size = new System.Drawing.Size(174, 23);
+            this.btnConformErrorProjects.TabIndex = 10;
+            this.btnConformErrorProjects.Text = "7- Conform Error Projects";
+            this.btnConformErrorProjects.UseVisualStyleBackColor = true;
+            this.btnConformErrorProjects.Click += new System.EventHandler(this.BtnConformErrorProjects_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button1.Location = new System.Drawing.Point(13, 316);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(173, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "GetErrorProjects";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
+            // btnFixTF402577
+            // 
+            this.btnFixTF402577.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFixTF402577.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnFixTF402577.Location = new System.Drawing.Point(12, 145);
+            this.btnFixTF402577.MaximumSize = new System.Drawing.Size(174, 23);
+            this.btnFixTF402577.MinimumSize = new System.Drawing.Size(174, 23);
+            this.btnFixTF402577.Name = "btnFixTF402577";
+            this.btnFixTF402577.Size = new System.Drawing.Size(174, 23);
+            this.btnFixTF402577.TabIndex = 9;
+            this.btnFixTF402577.Text = "4- FIX TF402577";
+            this.btnFixTF402577.UseVisualStyleBackColor = true;
+            this.btnFixTF402577.Click += new System.EventHandler(this.BtnFixTF402577_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(791, 320);
+            this.ClientSize = new System.Drawing.Size(791, 352);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnChange);
+            this.Controls.Add(this.btnClearConsole);
             this.Controls.Add(this.txtCollectionUrl);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnConformProject);
+            this.Controls.Add(this.btnConformErrorProjects);
             this.Controls.Add(this.btnConformProjects);
             this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnFixTF402577);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnForNot);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtFiles);
             this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.lblLogFile);
             this.Controls.Add(this.lblFolder);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.splitter1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(807, 359);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(807, 359);
             this.Name = "Form1";
             this.Text = "Azure DevOps Migration Helper";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -260,6 +361,14 @@
         private System.Windows.Forms.TextBox txtCollectionUrl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnConformProjects;
+        private System.Windows.Forms.Button btnClearConsole;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblLogFile;
+        private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Button btnConformProject;
+        private System.Windows.Forms.Button btnConformErrorProjects;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFixTF402577;
     }
 }
 
